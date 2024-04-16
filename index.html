@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Timestamp Recorder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="videoContainer" class="section">
+        <h2>Video</h2>
+        <label for="videoInput">Choose File</label>
+        <input type="file" id="videoInput" accept="video/mp4">
+        <button id="back30Button" disabled>Back 30s</button>
+        <video id="videoPlayer" controls autoplay></video>
+        <p id="videoFileNameLabel"></p>
+    </div>
+    <div id="timestampsContainer" class="section">
+        <h2>Timestamps</h2>
+        <button id="recordTimestampButton" disabled>Record Timestamp</button>
+        <button id="saveTimestampsButton" disabled>Save Timestamps</button>
+        <textarea id="timestampsTextarea" rows="10" placeholder="Choose a video file to get started"></textarea>
+    </div>
+    <div id="thumbnailsContainer" class="section">
+        <h2 id="clipsLabel">Clips (0)</h2>
+        <div id="thumbnails"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
