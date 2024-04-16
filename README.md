@@ -1,2 +1,2 @@
-# Video Timestamp Recorder
+# Timestamp Recorder
 Video Timestamp Recorder
