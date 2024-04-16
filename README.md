@@ -1,2 +1,2 @@
-# video_timestamp_recorder
+# Video Timestamp Recorder
 Video Timestamp Recorder
