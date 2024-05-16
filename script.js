@@ -44,6 +44,14 @@ document.getElementById('videoInput').addEventListener('change', function() {
         document.getElementById('skip10Button').disabled = false;
         document.getElementById('skip30Button').disabled = false;
 
+        // Update the label with the name of the selected file
+        var videoFileNameLabel = document.getElementById('videoLabel');
+        var fileName = videoInput.files[0].name;
+        if (fileName.length > 55) {
+            fileName = fileName.substring(0, 52) + '...';
+        }
+        videoFileNameLabel.textContent = fileName;
+
         // Clear the placeholder
         document.getElementById('timestampsTextarea').placeholder = '';
     }
@@ -176,11 +184,17 @@ function clearThumbnails() {
 }
 
 function saveTimestampsToFile(text) {
+    var videoInput = document.getElementById('videoInput');
+    var fileName = videoInput.files[0].name;
+    if (fileName.length > 55) {
+        fileName = fileName.substring(0, 52) + '...';
+    }
+    var truncatedLabel = fileName.replace(/\.[^/.]+$/, "").substring(0, 52); // Remove extension and truncate label
     var blob = new Blob([text], { type: 'text/plain' });
     var a = document.createElement('a');
     document.body.appendChild(a);
     a.href = URL.createObjectURL(blob);
-    a.download = 'timestamps.txt';
+    a.download = 'timestamps-' + truncatedLabel + '.txt';
     a.click();
 }
 
