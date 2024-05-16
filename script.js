@@ -14,6 +14,9 @@ document.getElementById('saveTimestampsButton').disabled = true;
 
 // Disable the "Back 30" button initially
 document.getElementById('back30Button').disabled = true;
+document.getElementById('back10Button').disabled = true;
+document.getElementById('skip10Button').disabled = true;
+document.getElementById('skip30Button').disabled = true;
 
 // Counter for thumbnails
 var thumbnailCounter = 0;
@@ -37,6 +40,9 @@ document.getElementById('videoInput').addEventListener('change', function() {
         document.getElementById('saveTimestampsButton').disabled = false;
         // Enable the "Back 30" button
         document.getElementById('back30Button').disabled = false;
+        document.getElementById('back10Button').disabled = false;
+        document.getElementById('skip10Button').disabled = false;
+        document.getElementById('skip30Button').disabled = false;
 
         // Clear the placeholder
         document.getElementById('timestampsTextarea').placeholder = '';
@@ -127,6 +133,24 @@ function removeTimestamp(currentTime) {
 document.getElementById('back30Button').addEventListener('click', function() {
     var videoPlayer = document.getElementById('videoPlayer');
     videoPlayer.currentTime -= 30;
+});
+
+// Function to rewind the video by 10 seconds
+document.getElementById('back10Button').addEventListener('click', function() {
+    var videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.currentTime -= 10;
+});
+
+// Function to skip the video by 10 seconds
+document.getElementById('skip10Button').addEventListener('click', function() {
+    var videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.currentTime += 10;
+});
+
+// Function to skip the video by 30 seconds
+document.getElementById('skip30Button').addEventListener('click', function() {
+    var videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.currentTime += 30;
 });
 
 document.getElementById('saveTimestampsButton').addEventListener('click', function() {
