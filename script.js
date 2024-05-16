@@ -3,6 +3,11 @@ function clearData() {
     localStorage.removeItem('videoTimestamps');
     displayTimestamps('');
     clearThumbnails();
+    // Hide Back and Skip buttons initially
+    document.getElementById('back30Button').style.display = 'none';
+    document.getElementById('back10Button').style.display = 'none';
+    document.getElementById('skip10Button').style.display = 'none';
+    document.getElementById('skip30Button').style.display = 'none';
 }
 
 // Clear timestamps, thumbnails, and clipboard when the page loads
@@ -11,15 +16,6 @@ window.addEventListener('load', clearData);
 // Disable timestamp buttons initially
 document.getElementById('recordTimestampButton').disabled = true;
 document.getElementById('saveTimestampsButton').disabled = true;
-
-// Disable the "Back 30" button initially
-document.getElementById('back30Button').disabled = true;
-document.getElementById('back10Button').disabled = true;
-document.getElementById('skip10Button').disabled = true;
-document.getElementById('skip30Button').disabled = true;
-
-// Counter for thumbnails
-var thumbnailCounter = 0;
 
 document.getElementById('videoInput').addEventListener('change', function() {
     var videoInput = document.getElementById('videoInput');
@@ -38,11 +34,11 @@ document.getElementById('videoInput').addEventListener('change', function() {
         // Enable timestamp buttons
         document.getElementById('recordTimestampButton').disabled = false;
         document.getElementById('saveTimestampsButton').disabled = false;
-        // Enable the "Back 30" button
-        document.getElementById('back30Button').disabled = false;
-        document.getElementById('back10Button').disabled = false;
-        document.getElementById('skip10Button').disabled = false;
-        document.getElementById('skip30Button').disabled = false;
+        // Show Back and Skip buttons
+        document.getElementById('back30Button').style.display = 'inline-block';
+        document.getElementById('back10Button').style.display = 'inline-block';
+        document.getElementById('skip10Button').style.display = 'inline-block';
+        document.getElementById('skip30Button').style.display = 'inline-block';
 
         // Update the label with the name of the selected file
         var videoFileNameLabel = document.getElementById('videoLabel');

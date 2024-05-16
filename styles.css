@@ -118,22 +118,14 @@ textarea {
     overflow-y: auto;
 }
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
-button:disabled:hover {
-    background-color: #ccc;
-}
-
+/* Button Styles */
 button,
 label {
     margin-right: 10px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Default green color */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -142,7 +134,26 @@ label {
 
 button:hover,
 label:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Updated Button Styles for Back and Skip buttons */
+#back30Button,
+#back10Button,
+#skip10Button,
+#skip30Button {
+    background-color: #007bff; /* Blue color for Back and Skip buttons */
+}
+
+button:disabled,
+label:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:disabled:hover,
+label:disabled:hover {
+    background-color: #ccc;
 }
 
 input[type="file"] {
