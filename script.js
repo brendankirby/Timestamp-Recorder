@@ -17,6 +17,9 @@ window.addEventListener('load', clearData);
 document.getElementById('recordTimestampButton').disabled = true;
 document.getElementById('saveTimestampsButton').disabled = true;
 
+// Counter for thumbnails
+var thumbnailCounter = 0;
+
 document.getElementById('videoInput').addEventListener('change', function() {
     var videoInput = document.getElementById('videoInput');
     if (videoInput.files.length > 0) {
