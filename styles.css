@@ -18,16 +18,17 @@ body {
 #timestampsContainer {
     position: fixed;
     top: 0;
-    width: 50%;
     height: 70%;
 }
 
 #videoContainer {
     left: 0;
+    width: 55%; /* Set Video section width to 60% */
 }
 
 #timestampsContainer {
     right: 0;
+    width: 45%; /* Set Timestamps section width to 40% */
 }
 
 #thumbnailsContainer {
